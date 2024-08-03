@@ -2,12 +2,15 @@ import express, { Application } from "express";
 import cors from "cors";
 import { AppDataSource } from "./config/database";
 import errorHandler from "./middlewares/errorHandler";
+import identifyRoute from "./routes/identifyRoute";
 
 const app: Application = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/api", identifyRoute);
 
 app.use(errorHandler);
 
