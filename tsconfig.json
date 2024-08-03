@@ -4,9 +4,12 @@
     "moduleResolution": "NodeNext",
     "target": "es6",
     "baseUrl": "src",
-    "outDir": "dist",
+    "outDir": "build",
     "sourceMap": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src/**/*"]
 }
