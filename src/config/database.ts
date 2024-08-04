@@ -13,6 +13,4 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   logging: process.env.NODE_ENV === "development",
   entities: [Contact],
-  migrations: ["src/migrations/**/*.ts"],
-  subscribers: ["src/subscribers/**/*.ts"],
 });
