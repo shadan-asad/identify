@@ -5,6 +5,7 @@
     "target": "es6",
     "rootDir": "src",
     "outDir": "build",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
