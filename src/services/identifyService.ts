@@ -11,7 +11,6 @@ const contactRepository = AppDataSource.getRepository(Contact);
 async function handleEmailOnly(email: string) {
   const existingContact = await contactRepository.findOne({ where: { email } });
   if (existingContact) {
-    console.log("\n****************existing email: ");
     return existingContact;
   }
   const newContact = contactRepository.create({
@@ -19,7 +18,6 @@ async function handleEmailOnly(email: string) {
     linkPrecedence: "primary",
   });
   const res = await contactRepository.save(newContact);
-  console.log("\n\n\n****************saved is: ", res);
   return res;
 }
 
@@ -137,7 +135,6 @@ export const identifyService = async (input: IdentifyInput) => {
     if (input.email && input.phoneNumber) {
       contact = await handleEmailAndPhoneNumber(input.email, input.phoneNumber);
     } else if (input.email) {
-      console.log("caling email only");
       contact = await handleEmailOnly(input.email);
     } else if (input.phoneNumber) {
       contact = await handlePhoneNumberOnly(input.phoneNumber);
