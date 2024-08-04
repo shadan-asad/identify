@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "commonjs",
     "allowJs": true,
     "target": "es6",
     "rootDir": "src",
