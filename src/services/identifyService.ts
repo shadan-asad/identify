@@ -46,26 +46,7 @@ async function handleEmailAndPhoneNumber(email: string, phoneNumber: string) {
   });
 
   if (existingEmailContact && existingPhoneContact) {
-    // if (existingEmailContact.id !== existingPhoneContact.id) {
-    //   // Link the contacts if they're different
-    //   const secondaryContact =
-    //     existingEmailContact.createdAt > existingPhoneContact.createdAt
-    //       ? existingEmailContact
-    //       : existingPhoneContact;
-    //   secondaryContact.linkPrecedence = "secondary";
-
-    //   if (existingEmailContact.linkedId) {
-    //     secondaryContact.linkedId = existingEmailContact.linkedId;
-    //   } else if (existingPhoneContact.linkedId) {
-    //     secondaryContact.linkedId = existingPhoneContact.linkedId;
-    //   } else {
-    //     secondaryContact.linkedId = Math.min(
-    //       existingEmailContact.id,
-    //       existingPhoneContact.id
-    //     );
-    //   }
-    //   await contactRepository.save(secondaryContact);
-    // Find the primary contacts for both
+    // If returned contact is secondary then find its primary
     const emailPrimaryContact =
       existingEmailContact.linkPrecedence === "primary"
         ? existingEmailContact
