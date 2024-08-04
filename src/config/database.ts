@@ -13,4 +13,5 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   logging: process.env.NODE_ENV === "development",
   entities: [Contact],
+  ssl: true,
 });
