@@ -22,7 +22,7 @@ DB_HOST=your-db_host
 DB_PORT=5432  
 DB_USERNAME=your_db_user  
 DB_PASSWORD=your_db_password  
-DB_NAME=your_db_name  ```
+DB_NAME=your_db_name```
 
 4. Build the project:
 `npm run build`
